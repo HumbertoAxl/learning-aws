@@ -7,14 +7,32 @@
 </template>
 
 <script setup>
+import Swal from 'sweetalert2';
+
 function showBuyMeACoffeeMessage() {
-  alert('Thanks, when do I start?');
+  Swal.fire({
+    title: 'Thanks!',
+    text: 'When do I start?',
+    icon: 'success',
+    confirmButtonText: 'Next week!',
+    customClass: {
+      confirmButton: 'swal-button-white-text',
+    },
+  });
 }
 </script>
 
 <style scoped>
 .v-toolbar {
   color: white;
+}
+
+.swal-button-white-text {
+  color: white !important;
+}
+
+.swal-toast-white-text {
+  color: white !important;
 }
 
 .toolbar {

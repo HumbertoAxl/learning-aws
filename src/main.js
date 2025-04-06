@@ -1,4 +1,6 @@
 import { createApp } from "vue";
+import { Amplify } from 'aws-amplify';
+import outputs from '../amplify_outputs.json';
 import App from "@/App.vue";
 import HomePage from "@/pages/HomePage.vue";
 import { createRouter, createWebHistory } from "vue-router";
@@ -46,5 +48,7 @@ const router = createRouter({
     history: createWebHistory(),
     routes, // short for `routes: routes`
 });
+
+Amplify.configure(outputs);
 
 createApp(App).use(router).use(vuetify).mount("#app");
